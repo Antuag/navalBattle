@@ -1,4 +1,5 @@
-class App { 
+class Utils
+ { 
     static async loadPage(url,container) {
         const response = await fetch(url)
         if (!response.ok) {
