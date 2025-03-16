@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("http://127.0.0.1:5000/countries")
       .then(response => response.json())
       .then( data => {
-        // Recorrer los países y añadirlos al select
+        // Recorrer los países y añadirlos al option
         data.forEach((pais) => {
-          // Obtener clave y valor del json paises
+          // Obtener clave y valor del json que tiene los paises
           let code = Object.keys(pais)[0]; // codigo ejm: "AD"
           let name = pais[code]; // Nombre ejm: "andorra"
           let option = document.createElement("option");
