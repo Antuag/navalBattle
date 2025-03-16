@@ -1,5 +1,5 @@
-export function login(doc) {
-  let paises = doc.getElementById("country");
+export function login() {
+  let paises = document.getElementById("country");
 
   console.log(paises,"hola");
   
@@ -15,7 +15,7 @@ export function login(doc) {
           // Obtener clave y valor del json paises
           let code = Object.keys(pais)[0]; // codigo ejm: "AD"
           let name = pais[code]; // Nombre ejm: "andorra"
-          let option = doc.createElement("option");
+          let option = document.createElement("option");
           option.value = code;
           option.textContent = name;
           paises.appendChild(option);
