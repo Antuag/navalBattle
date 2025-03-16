@@ -1,7 +1,8 @@
-class Utils
+export default class Utils
  { 
     static async loadPage(url,container) {
         try {
+            
             const response = await fetch(url)
             if (!response.ok) {
                 throw new Error("Failed to load page");
