@@ -1,13 +1,5 @@
-export class Usuario {
-  constructor(nickname, pais, puntaje) {
-    this.nickname = nickname;
-    this.pais = pais;
-    this.puntaje = puntaje;
-  }
-}
 export function login() {
   let paises = document.getElementById("country");
-  let btnIniciar = document.getElementById("btnIniciar");
 
   // Función para obtener y mostrar países
   function cargarPaises() {
@@ -29,14 +21,4 @@ export function login() {
   }
   cargarPaises();
   
-  // Función para registrar usuario
-  function registro() {
-    let nickname = document.getElementById("nickname").value;
-    let pais = document.getElementById("country").value;
-    let puntaje = 0;
-    let jugador = new Usuario(nickname, pais, puntaje);
-    console.log(jugador);
-  }
-
-  btnIniciar.addEventListener("click", registro);
 }
