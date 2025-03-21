@@ -14,6 +14,7 @@ export default class Utils
         }
         catch (error) {
             console.error(error);
+            
         }
    
     }
