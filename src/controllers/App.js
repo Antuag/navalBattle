@@ -18,9 +18,8 @@ class App {
       const puntaje = 0;
       const jugador = new Usuario(nickname, pais, puntaje);
       console.log(jugador);
-      Utils.loadPage("src/views/ranking.html", container);
+      Utils.loadPage("src/views/opcionesJuego.html", container);
       cargarPuntajes();
-
     });
   }
 }

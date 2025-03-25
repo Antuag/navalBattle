@@ -28,7 +28,7 @@ export function cargarPuntajes() {
       });
     })
     .catch((error) =>
-      console.error("Error al obtener los datos del jugador1:", error)
+      console.error("Error al obtener los datos del jugador", error)
     );
 }
 
