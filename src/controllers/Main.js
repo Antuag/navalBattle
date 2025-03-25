@@ -15,6 +15,9 @@ class Main {
       const puntaje = 0;
       const jugador = new Usuario(nickname, pais, puntaje);
       console.log(jugador);
+      container
+      URL
+      utils.loadPage(container, container);
     });
   }
 

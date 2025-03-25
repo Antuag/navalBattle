@@ -1,5 +1,7 @@
 export default class Utils
  { 
+    // Url es el html que se va a cargar
+    // container es el contenedor donde se va a cargar el html
     static async loadPage(url,container) {
         try {
             
