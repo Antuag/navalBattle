@@ -12,14 +12,13 @@ class App {
   }
   static crearUsuario() {
     let btnIniciar = document.getElementById("btnIniciar");
-    btnIniciar.addEventListener("click", () => {
+    btnIniciar.addEventListener("click", async () => {
       const nickname = document.getElementById("nickname").value;
       const pais = document.getElementById("country").value;
       const puntaje = 0;
       const jugador = new Usuario(nickname, pais, puntaje);
       console.log(jugador);
-      Utils.loadPage("src/views/opcionesJuego.html", container);
-      cargarPuntajes();
+      await Utils.loadPage("src/views/opcionesJuego.html", container);
     });
   }
 }
