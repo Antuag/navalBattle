@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rankings</title>
-    <!-- Enlace a Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- El atributo defer es para que el script se ejecute luego de que está cargada la página -->
-    <script src="../controllers/ranking.js" defer></script>
-</head>
-<body class="container mt-5">
-
-    <h2 class="text-center mb-4">Lista de ranking</h2>
-
-    <button id="cargarRanking" class="btn btn-success mb-3">Cargar puntajes</button>
-
+<div class="position-absolute top-0 end-0 m-3">
     <table class="table table-bordered">
-        <!-- encabezado de la tabla thead -->
-        <thead class="table-dark">
-            <tr>
-                <th>Pais</th>
-                <th>Nickname</th>
-                <th>Puntaje</th>
-            </tr>
-        </thead>
-        <tbody id="tablaRanking"></tbody> <!-- cuerpo de la tabla tbody -->
+      <thead class="table-dark">
+        <tr>
+          <th>Pais</th>
+          <th>Nickname</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody id="tablaRanking"></tbody>
     </table>
-
-</body>
-</html>
+  </div>
+  
