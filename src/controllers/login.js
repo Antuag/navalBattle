@@ -1,3 +1,7 @@
+import { Usuario } from "../models/Usuario.js";
+import Utils from "./Utils.js";
+import { crearTablero } from "./opcionesJuego.js";
+
 export function login() {
   let paises = document.getElementById("country");
 
@@ -22,3 +26,22 @@ export function login() {
   cargarPaises();
   
 }
+
+export function crearUsuario() {
+    let btnIniciar = document.getElementById("btnIniciar");
+    btnIniciar.addEventListener("click", async () => {
+      const nickname = document.getElementById("nickname").value;
+      const pais = document.getElementById("country").value;
+      const puntaje = 0;
+      const jugador = new Usuario(nickname, pais, puntaje);
+      localStorage.setItem("jugador", JSON.stringify(jugador));
+      console.log(jugador);
+      await Utils.loadPage("src/views/opcionesJuego.html", container, true);
+      crearTablero();
+
+    });
+}
+
+
+  
+
