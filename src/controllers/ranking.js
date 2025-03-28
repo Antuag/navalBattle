@@ -32,4 +32,3 @@ export function cargarPuntajes() {
     );
 }
 
-// Evento para cargar usuarios al hacer clic en el botón

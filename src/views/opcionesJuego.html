@@ -5,21 +5,14 @@
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label>Tablero de juego</label>
+            <label class="text-center w-100">Tablero de juego</label>
             <input
               type="number"
               id="inTamaño"
-              class="form-control"
+              class="form-control text-center w-100"
               placeholder="Ingrese un tamaño"
             />
           </div>
-          <button
-            id="confirmarT"
-            type="submit"
-            class="btn btn-primary btn-block"
-          >
-            Confirmar
-          </button>
         </form>
       </div>
     </div>
@@ -28,16 +21,14 @@
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label>Color de barcos</label>
+            <label class="text-center w-100">Color de barcos</label>
             <input
               type="color"
+              id="colorBarcos"
               class="form-control mb-2 color"
               value="#000000"
             />
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
-            Confirmar
-          </button>
         </form>
       </div>
     </div>
@@ -46,33 +37,31 @@
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label>Geoposicion</label>
+            <label class="text-center w-100">Geoposicion</label>
             <input
               type="text"
-              id="inputNumber"
-              class="form-control"
+              id="geoPosicion"
+              class="form-control text-center w-100"
               placeholder="Seleccione un país"
             />
           </div>
-          <button type="submit" class="btn btn-primary btn-block">
-            Confirmar
-          </button>
         </form>
       </div>
     </div>
   </div>
 
   <!-- Tablero -->
-  <div class="card custom-card">
+  <div class="card tablero">
     <div class="card-body">
       <form>
         <div class="form-group">
           <label>Posicion de los barcos</label>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">
-          Confirmar
-        </button>
       </form>
     </div>
   </div>
+
 </div>
+
+<button id="btnConfirmar" type="submit" class="btn btn-primary btn-block">Confirmar</button>
+
