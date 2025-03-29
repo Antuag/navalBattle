@@ -26,6 +26,8 @@ export async function crearTablero() {
 export function crearMapa() {
   const tablero = JSON.parse(localStorage.getItem("tablero"));
   const tamaño = tablero["tamañoTablero"];
+  let contador = 0;
+
 
   if (tamaño < 10 && tamaño > 20) {
     alert("El tamaño del tablero debe ser minimo de 10x10 y maximo de 20x20");
@@ -38,7 +40,6 @@ export function crearMapa() {
     contenedor.appendChild(fila);
     fila.classList.add("row");
     fila.id = "fila " + i;
-    document.getElementById("tamañoNum").value = "";
 
     for (let j = 0; j < tamaño; j++) {
       let columna = document.createElement("div");
