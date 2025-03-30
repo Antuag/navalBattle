@@ -1,0 +1,32 @@
+.d-grid {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+#tableroGuerra {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 20), 1fr);
+  grid-template-rows: repeat(var(--rows, 20), 1fr);
+  gap: 3px;
+  width: min(90vh, 90vw);
+  height: min(97vh, 90vw);
+  min-width: 300px;
+  min-height: 300px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 3px solid #000;
+  border-radius: 10px;
+}
+
+button {
+  background-color: #1e90ff; /* Color azul */
+  border: 1px solid #000000; /* Borde negro */
+  width: 100%; /* Asegura que ocupe todo el espacio disponible */
+  height: 100%; /* Asegura que ocupe todo el espacio disponible */
+  border-radius: 5px; /* Bordes redondeados */
+}

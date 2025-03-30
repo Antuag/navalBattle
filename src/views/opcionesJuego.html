@@ -1,17 +1,19 @@
 <div class="container">
   <!-- Opciones -->
   <div class="options">
-    <div class="card custom-card">
+    <div class="card custom-card tamañoColor">
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label class="text-center w-100">Tablero de juego</label>
+            <label class="text-center w-100">Tamaño y color del tablero</label>
             <input
               type="number"
               id="inTamaño"
               class="form-control text-center w-100"
               placeholder="Ingrese un tamaño"
+              value="10"
             />
+            <input type="color" id="colorTablero" class="form-control mb-2 color" value="#777777" />
           </div>
         </form>
       </div>
@@ -33,16 +35,17 @@
       </div>
     </div>
 
-    <div class="card custom-card">
+    <div class="card custom-card mb-3">
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label class="text-center w-100">Geoposicion</label>
+            <label class="text-center w-100 mb-2">Geoposicion</label>
             <input
               type="text"
               id="geoPosicion"
-              class="form-control text-center w-100"
+              class="form-control text-center w-100 mb-2"
               placeholder="Seleccione una geoposicion"
+              value="Beijing"
             />
           </div>
         </form>

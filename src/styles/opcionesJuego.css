@@ -25,7 +25,15 @@ body {
 .custom-card {
   background-color: #ffffff;
   width: 300px;
-  height: 120px;
+  height: 110px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.tamañoColor {
+  background-color: #ffffff;
+  width: 300px;
+  height: 160px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
