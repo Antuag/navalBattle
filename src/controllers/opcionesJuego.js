@@ -2,6 +2,7 @@ import { cargarPuntajes } from "./ranking.js";
 import { Tablero } from "../models/Tablero.js";
 import Utils from "./Utils.js";
 import { cargarUsuario } from "./login.js";
+import { ataquesBarcos } from "./ataques.js";
 
 export async function crearTablero() {
   let btnConfirmar = document.getElementById("btnConfirmar");
@@ -67,12 +68,17 @@ export async function tamañoTablero() {
       fila.appendChild(columna);
       columna.classList.add("col-1");
       columna.id = "columna " + j;
+
       let casilla = document.createElement("button");
       casilla.style.backgroundColor = tablero["colorTablero"];
       contador++;
       columna.appendChild(casilla);
       casilla.id = i + "-" + j;
-      casilla.maxLength = 1;
+
+      casilla.addEventListener("click", () => {
+        ataquesBarcos(casilla.id);
+        
+      });
     }
   }
 }

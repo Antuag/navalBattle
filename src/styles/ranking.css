@@ -2,13 +2,13 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(204, 175, 238, 0.8); /* Fondo semi-transparente */
+    background: rgba(161, 194, 238, 0.8); /* Fondo semi-transparente */
     border-radius: 10px; /* Bordes redondeados */
     padding: 12px 16px; /* Espaciado interno */
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
     width: 250px; /* Ancho fijo */
     font-size: 14px;
-    border-left: 4px solid #a70499; /* Línea de color diferenciadora */
+    border-left: 4px solid #042263; /* Línea de color diferenciadora */
   }
   
   /* Estilos generales de la tabla */
@@ -22,7 +22,7 @@
   
   /* Cabecera de la tabla */
   .ranking-container thead {
-    background-color: #a70499; /* Fondo del encabezado */
+    background-color: #042263; /* Fondo del encabezado */
     color: white;
     font-weight: bold;
   }
@@ -32,7 +32,7 @@
   .ranking-container td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid rgba(167, 4, 153, 0.3);
+    border-bottom: 1px solid rgba(5, 4, 5, 0.3);
     color: #333; /* Texto oscuro para contraste */
   }
   

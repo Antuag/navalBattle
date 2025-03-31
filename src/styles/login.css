@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    
 }
 
 body {
@@ -11,6 +12,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url("../styles/img/naval.png");
+    background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Contenedor del formulario */
@@ -20,12 +25,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 500px;
+    
 }
 
 /* Título */
 h2 {
     margin-bottom: 30px;
-    color: #1c1fcf;
+    color: #050507;
     text-align: center;
 }
 
@@ -37,8 +43,9 @@ h2 {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    color: #000000;
 }
+
 
 input,
 select {

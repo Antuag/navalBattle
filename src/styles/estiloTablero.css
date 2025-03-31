@@ -14,13 +14,14 @@
   grid-template-rows: repeat(var(--rows, 20), 1fr);
   gap: 3px;
   width: min(90vh, 90vw);
-  height: min(97vh, 90vw);
+  height: min(99vh, 90vw);
   min-width: 300px;
   min-height: 300px;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #f2f3f8;
   border: 3px solid #000;
   border-radius: 10px;
+  pointer-events: auto; /* Permite interacciones */
 }
 
 button {
@@ -29,4 +30,7 @@ button {
   width: 100%; /* Asegura que ocupe todo el espacio disponible */
   height: 100%; /* Asegura que ocupe todo el espacio disponible */
   border-radius: 5px; /* Bordes redondeados */
+  pointer-events: auto; /* Asegura que se puedan presionar */
+  position: relative; /* Asegura que esté sobre otros elementos */
+  z-index: 2; /* Más alto que otros elementos cercanos */
 }
