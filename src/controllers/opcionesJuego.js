@@ -13,8 +13,6 @@ export async function crearTablero() {
       const tablero = new Tablero(tamaño, color, geoPosicion);
       localStorage.setItem("tablero", JSON.stringify(tablero));
       console.log(tablero);
-      await Utils.loadPage("src/views/ranking.html", container, true);
-      cargarPuntajes();
       crearMapa();
     });
   } else {
@@ -22,13 +20,15 @@ export async function crearTablero() {
   }
 }
 
-export function crearMapa() {
+export async function crearMapa() {
 
   const tablero = JSON.parse(localStorage.getItem("tablero"));
   const tamaño = tablero["tamañoTablero"];
 
   if (tamaño < 10 || tamaño > 20) {
-    alert("El tamaño del tablero debe ser mínimo de 10x10 y máximo de 20x20");
+    await Utils.loadPage("src/views/opcionesJuego.html", container, true);
+
+    // alert("El tamaño del tablero debe ser mínimo de 10x10 y máximo de 20x20");
     return;
   }
 
@@ -37,6 +37,9 @@ export function crearMapa() {
     console.error("No se encontró el elemento #container en la página.");
     return;
   }
+  await Utils.loadPage("src/views/ranking.html", container, true);
+  cargarPuntajes();
+
 
   for (let i = 0; i < tamaño; i++) {
     let fila = document.createElement("div");
