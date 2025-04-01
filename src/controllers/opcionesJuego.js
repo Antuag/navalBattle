@@ -53,32 +53,22 @@ export async function crearTablero() {
 export async function tamañoTablero() {
   const tablero = JSON.parse(localStorage.getItem("tablero"));
   const tamaño = tablero["tamañoTablero"];
-  let contador = 0;
+  let contenedor = document.getElementById("tableroGuerra");
+
+  // Establecer las variables CSS dinámicamente para la cantidad de filas y columnas
+  contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
+  contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
 
   for (let i = 0; i < tamaño; i++) {
-    let fila = document.createElement("div");
-    let contenedor = document.getElementById("tableroGuerra");
-
-    contenedor.appendChild(fila);
-    fila.classList.add("row");
-    fila.id = "fila " + i;
-
     for (let j = 0; j < tamaño; j++) {
-      let columna = document.createElement("div");
-      fila.appendChild(columna);
-      columna.classList.add("col-1");
-      columna.id = "columna " + j;
-
       let casilla = document.createElement("button");
       casilla.style.backgroundColor = tablero["colorTablero"];
-      contador++;
-      columna.appendChild(casilla);
-      casilla.id = i + "-" + j;
-
+      casilla.id = `${i}-${j}`;
       casilla.addEventListener("click", () => {
         ataquesBarcos(casilla.id);
-        
       });
+
+      contenedor.appendChild(casilla);
     }
   }
 }
