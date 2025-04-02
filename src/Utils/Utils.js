@@ -1,7 +1,8 @@
-export default class Utils {
+export  class Utils {
   //borrar es booleano, si es true borra el contenido
   static async loadPage(url, container, borrar) {
     try {
+      
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Failed to load page");
@@ -16,7 +17,7 @@ export default class Utils {
         container.innerHTML = contenidoInterno;
       }
     } catch (error) {
-      console.error(error);
+      console.error(error,"hola");
     }
   }
   static async fetchJSON(url) {

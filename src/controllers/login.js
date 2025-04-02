@@ -1,5 +1,5 @@
 import { Usuario } from "../models/Usuario.js";
-import Utils from "./Utils.js";
+import {Utils} from "../Utils/Utils.js";
 import { crearTablero } from "./opcionesJuego.js";
 
 export function login() {

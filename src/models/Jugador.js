@@ -6,4 +6,4 @@ export class Jugador {
 
   // Método para asignar un tablero al jugador
 
-}
+}x

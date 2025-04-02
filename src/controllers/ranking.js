@@ -11,6 +11,8 @@ export function cargarPuntajes() {
 
         let columnaPais = document.createElement("td");
         let imgBandera = document.createElement("img");
+        console.log("hola", `https://flagsapi.com/${pais}/flat/32.png`);
+        
         imgBandera.src = `https://flagsapi.com/${pais}/flat/32.png`;
         columnaPais.appendChild(imgBandera);
         

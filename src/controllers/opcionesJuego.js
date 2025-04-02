@@ -1,6 +1,6 @@
 import { cargarPuntajes } from "./ranking.js";
 import { Tablero } from "../models/Tablero.js";
-import Utils from "./Utils.js";
+import {Utils} from "../Utils/Utils.js";
 
 export async function crearTablero() {
   let btnConfirmar = document.getElementById("btnConfirmar");
@@ -59,4 +59,7 @@ export async function crearMapa() {
       fila.appendChild(columna);
     }
   }
+}
+export function acomodarBarcos() {
+  const tablero =document.getElementById("container");
 }
