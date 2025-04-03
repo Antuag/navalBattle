@@ -1,9 +1,12 @@
-//Con esta funcion insertamos el mapa en la creacion de los barcos, con el fin de acomodarlos en sus lugares
+import { cargarClima, tamañoTablero } from "./opcionesJuego.js";
+import { cargarUsuario } from "./login.js";
+import Utils from "./Utils.js";
 
 export function insertarMapa() {
   const tablero = JSON.parse(localStorage.getItem("tablero"));
   const tamaño = tablero["tamañoTablero"];
   let contenedor = document.getElementById("tableroGuerra3");
+  const btnContinuar = document.getElementById("btnContinuar");
 
   contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
   contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
@@ -19,6 +22,15 @@ export function insertarMapa() {
       });
     }
   }
+
+  btnContinuar.addEventListener("click", async function () {
+    console.log("Continuar presionado");
+    await Utils.loadPage("src/views/estiloTablero.html", container, true);
+    await Utils.loadPage("src/views/climaUsuario.html", container, false);
+    tamañoTablero();
+    cargarClima();
+    cargarUsuario();
+  });
 }
 
 export function seleccionBarcos() {
@@ -33,7 +45,7 @@ export function seleccionBarcos() {
     // Cambiar la imagen de vista previa
     imgBarco.src = `src/styles/img/${barcoSeleccionado}.jpeg`;
 
-    // Guardar el tamaño del barco 
+    // Guardar el tamaño del barco
     localStorage.setItem("tamañoBarco", tamañoBarco);
   });
 }

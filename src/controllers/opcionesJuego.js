@@ -3,6 +3,7 @@ import Utils from "./Utils.js";
 import { ataquesBarcos } from "./ataques.js";
 import { insertarMapa, seleccionBarcos } from "./insertarMapa.js";
 
+
 export async function crearTablero() {
   let btnConfirmar = document.getElementById("btnConfirmar");
   if (btnConfirmar) {
@@ -24,14 +25,16 @@ export async function crearTablero() {
         localStorage.setItem("tablero", JSON.stringify(tablero));
         console.log(tablero);
         await Utils.loadPage("src/views/crearBarcos.html", container, true);
-
         insertarMapa();
         seleccionBarcos();
+       
       }
     });
   } else {
     console.error("btnConfirmar presenta error");
   }
+
+  
 }
 
 export async function tamañoTablero() {
