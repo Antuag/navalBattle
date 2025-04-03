@@ -24,6 +24,18 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
+.containerOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+  padding: 25px;
+  background-color: #0d1b2a;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
 
 .options-container {
   width: 100%;
@@ -94,7 +106,8 @@ input[type="color"] {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px; /* Menos margen en el botón */
+  margin-top: auto; /* Hace que el botón se mantenga abajo */
+  padding-top: 20px; /* Espacio extra antes del botón */
 }
 
 #btnConfirmar {
@@ -114,6 +127,8 @@ input[type="color"] {
   background-color: #d9534f;
   transform: scale(1.05);
 }
+
+ 
 
 @media (max-width: 768px) {
   .container {

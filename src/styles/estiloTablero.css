@@ -1,43 +1,42 @@
-/* Contenedor principal centrado */
+/* Contenedor principal */
 .d-grid {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  flex-wrap: wrap; /* Permite reorganizar en pantallas pequeñas */
+  flex-direction: row;  /* Asegura que los tableros estén en fila */
+  justify-content: center;  /* Centra los tableros horizontalmente */
+  align-items: center;  /* Alinea verticalmente */
+  gap: 20px;  /* Espacio entre los tableros */
+  width: 100%;  /* Usa todo el ancho disponible */
+  flex-wrap: nowrap;  /* Evita que los tableros se apilen */
 }
 
-/* Tablero de juego */
-#tableroGuerra {
+/* Tableros */
+#tableroGuerra1, #tableroGuerra2 {
   display: grid;
-  grid-template-columns: repeat(var(--cols, 10), 1fr);
-  grid-template-rows: repeat(var(--rows, 10), 1fr);
-  gap: 3px;
-  width: min(100vh, 80vw);
-  height: min(100vh, 80vw);
-  box-sizing: border-box;
+  grid-template-columns: repeat(var(--cols, 10), minmax(20px, 1fr));
+  grid-template-rows: repeat(var(--rows, 10), minmax(20px, 1fr));
+  gap: 2px;
+  background-color: #193aca;
   border: 3px solid #000;
   border-radius: 10px;
   pointer-events: auto;
-  aspect-ratio: 1 / 1; /* Mantiene el tablero cuadrado */
-  transition: all 0.3s ease-in-out;
+  width: calc(var(--cols, 10) * 30px);  /* Se ajusta dinámicamente */
+  height: calc(var(--rows, 10) * 30px); /* Se ajusta dinámicamente */
+  max-width: 90vw; /* Evita que el tablero sea más grande que la pantalla */
+  max-height: 90vh;
+  box-sizing: border-box;
 }
 
-/* Botones dentro del tablero */
-button {
-  background-color: #1e90ff;
+/* Celdas dentro del tablero */
+.buttonGuerra {
+  background-color: #000080;
   border: 1px solid #000;
   border-radius: 5px;
   width: 100%;
   height: 100%;
-  pointer-events: auto;
   transition: background 0.3s ease;
 }
 
-/* Cambia de color al pasar el mouse */
-button:hover {
+/* Efecto hover */
+.buttonGuerra:hover {
   background-color: #4682b4;
 }
-
-

@@ -1,4 +1,3 @@
-import { cargarPuntajes } from "./ranking.js";
 import { Tablero } from "../models/Tablero.js";
 import Utils from "./Utils.js";
 import { cargarUsuario } from "./login.js";
@@ -9,14 +8,7 @@ export async function crearTablero() {
   if (btnConfirmar) {
     btnConfirmar.addEventListener("click", async () => {
       const tamaño = document.getElementById("inTamaño").value;
-      const colorTablero = document.getElementById("colorTablero").value;
-      const colorBarcos = document.getElementById("colorBarcos").value;
       const geoPosicion = document.getElementById("geoPosicion").value;
-
-      if (colorTablero == colorBarcos) {
-        alert("Los colores del tablero y barcos no pueden ser iguales");
-        return;
-      }
 
       if (geoPosicion == "") {
         alert("La geoPosicion no puede estar vacia");
@@ -30,16 +22,12 @@ export async function crearTablero() {
       } else {
         const tablero = new Tablero(
           tamaño,
-          colorTablero,
-          colorBarcos,
           geoPosicion
         );
         localStorage.setItem("tablero", JSON.stringify(tablero));
         console.log(tablero);
         await Utils.loadPage("src/views/estiloTablero.html", container, true);
         await Utils.loadPage("src/views/climaUsuario.html", container, false);
-        await Utils.loadPage("src/views/ranking.html", container, false);
-        cargarPuntajes();
         tamañoTablero();
         cargarClima();
         cargarUsuario();
@@ -53,22 +41,35 @@ export async function crearTablero() {
 export async function tamañoTablero() {
   const tablero = JSON.parse(localStorage.getItem("tablero"));
   const tamaño = tablero["tamañoTablero"];
-  let contenedor = document.getElementById("tableroGuerra");
+  let contenedor1 = document.getElementById("tableroGuerra1");
+  let contenedor2 = document.getElementById("tableroGuerra2");
 
-  // Establecer las variables CSS dinámicamente para la cantidad de filas y columnas
-  contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
-  contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
+    // Establecer las variables CSS dinámicamente para la cantidad de filas y columnas
+    [contenedor1, contenedor2].forEach((contenedor) => {
+      contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
+      contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
+    });
 
   for (let i = 0; i < tamaño; i++) {
     for (let j = 0; j < tamaño; j++) {
-      let casilla = document.createElement("button");
-      casilla.style.backgroundColor = tablero["colorTablero"];
-      casilla.id = `${i}-${j}`;
-      casilla.addEventListener("click", () => {
-        ataquesBarcos(casilla.id);
+      let casilla1 = document.createElement("button");
+      casilla1.classList.add("buttonGuerra");
+      casilla1.id = `t1-${i}-${j}`;
+      casilla1.addEventListener("click", () => {
+        ataquesBarcos(casilla1.id);
       });
 
-      contenedor.appendChild(casilla);
+      let casilla2 = document.createElement("button");
+      casilla2.classList.add("buttonGuerra");
+      casilla2.id = `t2-${i}-${j}`;
+      casilla2.addEventListener("click", () => {
+        ataquesBarcos(casilla2.id);
+      });
+
+
+
+      contenedor1.appendChild(casilla1);
+      contenedor2.appendChild(casilla2);
     }
   }
 }
