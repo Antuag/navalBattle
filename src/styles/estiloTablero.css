@@ -10,7 +10,7 @@
 }
 
 /* Tableros */
-#tableroGuerra1, #tableroGuerra2 {
+#tableroGuerra1, #tableroGuerra2, #tableroGuerra3 {
   display: grid;
   grid-template-columns: repeat(var(--cols, 10), minmax(20px, 1fr));
   grid-template-rows: repeat(var(--rows, 10), minmax(20px, 1fr));

@@ -1,22 +1,33 @@
-<div class="card custom-card " id="cardBarcos">
-    <div class="card-body">
-      <form>
-        <div class="form-group">
-          <label class="text-center w-100">Barcos</label>
-          <select class="form-select text-center" id="tamañoBar" required>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>  
-          </select>
-          <input
-            type="color"
-            id="colorBarcos"
-            class="form-control mb-2 color"
-            value="#000000"
-          />
-        </div>
-      </form>
-    </div>
-  </div>
+<div class="card custom-card" id="cardBarcos">
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label class="text-center w-100">Color de los barcos</label>
 
+        <input
+          type="color"
+          id="colorBarcos"
+          class="form-control mb-2 color"
+          value="#000000"
+        />
+
+        <label>Selecciona un barco:</label>
+        <select id="selectBarco" class="form-select mb-2 text-center">
+          <option class="hidden-option" disabled selected>Barcos</option>
+          <option value="submarino" data-size="2">Submarino</option>
+          <option value="destructor" data-size="3">Destructor</option>
+          <option value="acorazado" data-size="4">Acorazado</option>
+          <option value="portaaviones" data-size="5">Portaaviones</option>
+        </select>
+
+        <div id="previewBarco">
+          <img id="imgBarco" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="d-grid">
+  <div id="tableroGuerra3" class="tablero"></div>
+</div>

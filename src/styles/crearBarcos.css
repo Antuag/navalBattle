@@ -7,9 +7,36 @@
     padding: 15px;
     border-radius: 10px;
     margin-left: 50px;
+    margin-top: 75px;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
     text-align: center;
     width: 280px; /* Ajusta el ancho según necesites */
+    height: 350px;
     transition: transform 0.3s ease-in-out;
     
 }
+
+#previewBarco {
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    
+  }
+  
+  #previewBarco img {
+    width: 150%;
+    height: 100%;
+    border-radius: 10px;
+
+    
+  }
+
+  .hidden-option {
+    display: none;
+  }
+
+  
+
+

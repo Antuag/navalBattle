@@ -1,7 +1,7 @@
 import { Tablero } from "../models/Tablero.js";
 import Utils from "./Utils.js";
-import { cargarUsuario } from "./login.js";
 import { ataquesBarcos } from "./ataques.js";
+import { insertarMapa, seleccionBarcos } from "./insertarMapa.js";
 
 export async function crearTablero() {
   let btnConfirmar = document.getElementById("btnConfirmar");
@@ -20,17 +20,13 @@ export async function crearTablero() {
           "El tamaño del tablero debe ser minimo de 10x10 y maximo de 20x20"
         );
       } else {
-        const tablero = new Tablero(
-          tamaño,
-          geoPosicion
-        );
+        const tablero = new Tablero(tamaño, geoPosicion);
         localStorage.setItem("tablero", JSON.stringify(tablero));
         console.log(tablero);
-        await Utils.loadPage("src/views/estiloTablero.html", container, true);
-        await Utils.loadPage("src/views/climaUsuario.html", container, false);
-        tamañoTablero();
-        cargarClima();
-        cargarUsuario();
+        await Utils.loadPage("src/views/crearBarcos.html", container, true);
+
+        insertarMapa();
+        seleccionBarcos();
       }
     });
   } else {
@@ -44,11 +40,11 @@ export async function tamañoTablero() {
   let contenedor1 = document.getElementById("tableroGuerra1");
   let contenedor2 = document.getElementById("tableroGuerra2");
 
-    // Establecer las variables CSS dinámicamente para la cantidad de filas y columnas
-    [contenedor1, contenedor2].forEach((contenedor) => {
-      contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
-      contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
-    });
+  // con esto se manejan las columnas y filas de los tableros, por medio de la variable tamaño
+  [contenedor1, contenedor2].forEach((contenedor) => {
+    contenedor.style.gridTemplateColumns = `repeat(${tamaño}, 1fr)`;
+    contenedor.style.gridTemplateRows = `repeat(${tamaño}, 1fr)`;
+  });
 
   for (let i = 0; i < tamaño; i++) {
     for (let j = 0; j < tamaño; j++) {
@@ -65,8 +61,6 @@ export async function tamañoTablero() {
       casilla2.addEventListener("click", () => {
         ataquesBarcos(casilla2.id);
       });
-
-
 
       contenedor1.appendChild(casilla1);
       contenedor2.appendChild(casilla2);
