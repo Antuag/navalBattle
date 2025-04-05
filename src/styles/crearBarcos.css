@@ -37,6 +37,19 @@
     display: none;
   }
 
+  #btnContinuar {
+    background-color: #ff6b6b;
+    border: none;
+    padding: 8px 38px; /* Botón más pequeño */
+    border-radius: 5px;
+    font-size: 14px; /* Tamaño de fuente reducido */
+    cursor: pointer;
+    transition: 0.3s;
+    width: auto;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
   
 
 

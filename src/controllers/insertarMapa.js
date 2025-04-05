@@ -35,7 +35,7 @@ export function insertarMapa() {
 
 export function seleccionBarcos() {
   const selectBarco = document.getElementById("selectBarco");
-  const imgBarco = document.getElementById("imgBarco");
+    const imgBarco = document.getElementById("imgBarco");
 
   selectBarco.addEventListener("change", function () {
     let barcoSeleccionado = this.value;
@@ -46,6 +46,10 @@ export function seleccionBarcos() {
     imgBarco.src = `src/styles/img/${barcoSeleccionado}.jpeg`;
 
     // Guardar el tamaño del barco
-    localStorage.setItem("tamañoBarco", tamañoBarco);
+      localStorage.setItem("tamañoBarco", tamañoBarco);
+      
+      console.log(`Tamaño: ${tamañoBarco}`);
+      
+      
   });
 }

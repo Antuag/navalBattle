@@ -5,6 +5,7 @@ class App {
   static async main() {
     const container = document.getElementById("container");
     await Utils.loadPage("src/views/login.html", container);
+
     login();
     crearUsuario();
   }
