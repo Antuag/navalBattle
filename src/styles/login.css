@@ -5,13 +5,13 @@
   font-family: Arial, sans-serif;
 }
 
-body {
+.bodyPrincipal {
   background-color: #f4f4f9;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../styles/img/fondo1.jpg");
+  background-image: url("../styles/img/fondoNaval1.png");
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center;
   background-repeat: no-repeat; /* Evita que la imagen se repita */

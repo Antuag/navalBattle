@@ -44,6 +44,7 @@
   background-color: #4682b4;
 }
 
+
 /* 📱 Ajustes para tablets */
 @media (max-width: 992px) {
   .d-grid {
@@ -67,3 +68,4 @@
     height: calc(var(--rows, 10) * 22px);
   }
 }
+

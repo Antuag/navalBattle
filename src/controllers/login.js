@@ -54,20 +54,23 @@ export function crearUsuario() {
 
 export function cargarUsuario() {
   const jugador = JSON.parse(localStorage.getItem("jugador"));
+  if (!jugador) return;
+
   const nickname = jugador["nick_name"];
   const pais = jugador["country_code"];
   const puntaje = jugador["score"];
-  if(!nickname || !pais || !puntaje) {
-    return;
-  }
-  document.getElementById("nickname").innerText = nickname;
-  document.getElementById("country").innerText = pais;
-  document.getElementById("score").innerText = puntaje;
-  
-  
+
+  const nicknameElement = document.getElementById("nickname");
+  const countryElement = document.getElementById("country");
+  const scoreElement = document.getElementById("score");
+
+  if (nicknameElement) nicknameElement.innerText = nickname;
+  if (countryElement) countryElement.innerText = pais;
+  if (scoreElement) scoreElement.innerText = puntaje;
 }
 
-export function cargarRanking() { 
+
+export function cargarRanking() {
   let btnRanking = document.getElementById("btnRanking");
   btnRanking.addEventListener("click", async () => {
     await Utils.loadPage("src/views/ranking.html", container, true);
