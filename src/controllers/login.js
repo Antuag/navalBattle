@@ -1,6 +1,7 @@
 import { Usuario } from "../models/Usuario.js";
 import Utils from "./Utils.js";
-import { crearTablero } from "./opcionesJuego.js";
+import { crearTablero } from "./configuracionJuego.js";
+import { cargarPuntajes } from "./ranking.js";
 
 export function login() {
   let paises = document.getElementById("country");
@@ -30,20 +31,22 @@ export function crearUsuario() {
   let btnIniciar = document.getElementById("btnIniciar");
   btnIniciar.addEventListener("click", async () => {
     const nickname = document.getElementById("nickname").value;
-    const codigoPais = document.getElementById("country");
-    const nombrePais = codigoPais.selectedOptions[0].textContent; 
+    const pais = document.getElementById("country");
+    const codigoPais = pais.selectedOptions[0].value;
     if (nickname == "") {
       alert("El nickname no puede estar vacío");
       return;
     }
-    if (nombrePais == "Selecciona un país" || nombrePais == "") {
+    if (codigoPais == "Selecciona un país" || codigoPais == "") {
       alert("Debes seleccionar un país");
       return;
     }
-    const puntaje = 0;
-    const jugador = new Usuario(nickname, nombrePais, puntaje);
+    console.log(codigoPais);
+
+    const jugador = new Usuario(nickname, codigoPais);
     localStorage.setItem("jugador", JSON.stringify(jugador));
     console.log(jugador);
+
     await Utils.loadPage("src/views/opcionesJuego.html", container, true);
     crearTablero();
   });
@@ -51,10 +54,23 @@ export function crearUsuario() {
 
 export function cargarUsuario() {
   const jugador = JSON.parse(localStorage.getItem("jugador"));
-  const nickname = jugador["nickname"];
-  const pais = jugador["pais"];
-  const puntaje = jugador["puntaje"];
+  const nickname = jugador["nick_name"];
+  const pais = jugador["country_code"];
+  const puntaje = jugador["score"];
+  if(!nickname || !pais || !puntaje) {
+    return;
+  }
   document.getElementById("nickname").innerText = nickname;
   document.getElementById("country").innerText = pais;
   document.getElementById("score").innerText = puntaje;
+  
+  
+}
+
+export function cargarRanking() { 
+  let btnRanking = document.getElementById("btnRanking");
+  btnRanking.addEventListener("click", async () => {
+    await Utils.loadPage("src/views/ranking.html", container, true);
+    cargarPuntajes();
+  });
 }

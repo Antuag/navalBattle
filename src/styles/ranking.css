@@ -1,53 +1,35 @@
 .ranking-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(161, 194, 238, 0.8); /* Fondo semi-transparente */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 12px 16px; /* Espaciado interno */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    width: 250px; /* Ancho fijo */
-    font-size: 14px;
-    border-left: 4px solid #042263; /* Línea de color diferenciadora */
-  }
-  
-  /* Estilos generales de la tabla */
-  .ranking-container table {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(204, 175, 238, 0.6); /* Fondo más tenue dentro de la tabla */
-    border-radius: 8px; /* Bordes redondeados */
-    overflow: hidden; /* Evita que los bordes redondeados sean cortados */
-  }
-  
-  /* Cabecera de la tabla */
-  .ranking-container thead {
-    background-color: #042263; /* Fondo del encabezado */
-    color: white;
-    font-weight: bold;
-  }
-  
-  /* Celdas de la tabla */
-  .ranking-container th,
-  .ranking-container td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid rgba(5, 4, 5, 0.3);
-    color: #333; /* Texto oscuro para contraste */
-  }
-  
-  /* Filas alternas */
-  .ranking-container tbody tr:nth-child(even) {
-    background: rgba(167, 4, 153, 0.2); /* Color de fondo para filas pares */
-  }
-  
-  .ranking-container tbody tr:nth-child(odd) {
-    background: rgba(204, 175, 238, 0.4); /* Color diferente para impares */
-  }
-  
-  /* Efecto hover */
-  .ranking-container tbody tr:hover {
-    background: rgba(167, 4, 153, 0.4);
-    transition: background 0.2s ease-in-out;
-  }
-  
+  position: relative;
+  background: rgba(161, 194, 238, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 360px;
+  margin: 20px auto 0 auto; /* centrado */
+  border-left: 4px solid #042263;
+  font-size: 15px;
+}
+
+.ranking-container table {
+  background: rgba(204, 175, 238, 0.6);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ranking-container img {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Top 3 con color especial (opcional) */
+.ranking-container tbody tr:nth-child(1) td {
+  font-weight: bold;
+  color: #d4af37;
+}
+.ranking-container tbody tr:nth-child(2) td {
+  font-weight: bold;
+  color: #a9a9a9;
+}
+.ranking-container tbody tr:nth-child(3) td {
+  font-weight: bold;
+  color: #cd7f32;
+}

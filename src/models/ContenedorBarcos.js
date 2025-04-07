@@ -1,15 +1,7 @@
 export class ContenedorBarcos {
-    constructor() {
-        this.barcos = [];
-    }
-
-    agregarBarco(barco) {
-        this.barcos.push(barco);
-    }
+    static barcosJugador = [];
+    static barcosMaquina = [];
 
    
-
-    obtenerBarcos() {
-        return this.barcos;
-    }
+   
 };

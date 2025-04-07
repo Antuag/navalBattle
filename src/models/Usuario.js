@@ -1,7 +1,8 @@
 export class Usuario {
-  constructor(nickname, pais, puntaje) {
-    this.nickname = nickname;
-    this.pais = pais;
-    this.puntaje = puntaje;
+  constructor(nickname, pais) {
+    this.nick_name = nickname;
+    this.score = 0;
+    this.country_code = pais;
+    
   }
 }

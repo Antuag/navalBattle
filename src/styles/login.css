@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../styles/img/naval.png");
+  background-image: url("../styles/img/fondo1.jpg");
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center;
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -76,5 +76,22 @@ select:focus {
   display: block; /* Necesario para que el margin auto funcione */
   transition: background 0.3s ease;
 }
+
+#btnRanking {
+  background-color: #2d4e04;
+  color: #fff;
+  margin: 10px auto; /* Centra automáticamente */
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 80%;
+  display: block; /* Necesario para que el margin auto funcione */
+  transition: background 0.3s ease;
+}
+
+
 
 
