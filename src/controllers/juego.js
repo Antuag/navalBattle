@@ -77,6 +77,11 @@ async function turnoMaquina(matrizJugador) {
     localStorage.getItem("casillasSeleccionadasMaquinas")
   );
 
+  console.log("Mapa con barcos hundidos jugador", matrizJugador);
+  localStorage.setItem("MatrizJugadorFinal", JSON.stringify(matrizJugador));
+
+
+
   // Busca coordenadas que no hayan sido seleccionadas
   do {
     x = Utils.numeroAleatorioEntre(0, tamañoTablero - 1);
@@ -94,6 +99,9 @@ async function turnoMaquina(matrizJugador) {
     `p1-${x}-${y}`,
     matrizJugador
   );
+
+
+
 }
 
 // Función que gestiona un ataque a una casilla
@@ -131,6 +139,8 @@ async function ataque(
       boton.style.backgroundColor = "red";
       huboImpacto = true;
       console.log("Mapa con barcos hundidos", matrizContrincante);
+      localStorage.setItem("MatrizEnemigoFinal", JSON.stringify(matrizContrincante));
+
 
 
       if (barco.getPoscicionesBarco().length == 0) {
@@ -159,10 +169,12 @@ async function ataque(
       },
       body: JSON.stringify(usuario),
     });
+
     await Utils.loadPage("src/views/ranking.html", container, true);
     document.body.classList.add('ranking');
     cargarPuntajes();
     volverInicio();
+    exportarMapas();
   }
 
   // Si no impactó ningún barco
@@ -230,3 +242,46 @@ function eliminarPosicion(barco, objetivo) {
   barco.poscicionesBarco = listaModificado;
   return barco;
 }
+
+function exportarMapas() {
+  let btnExportar = document.getElementById("btnExportar");
+
+  btnExportar.addEventListener("click", async () => {
+    const matrizJugador = JSON.parse(localStorage.getItem("MatrizJugadorFinal"));
+    const matrizEnemigo = JSON.parse(localStorage.getItem("MatrizEnemigoFinal"));
+
+    // Función para alinear las celdas visualmente
+    const matrizFormateada = (matriz) =>
+      matriz
+        .map(fila =>
+          fila.map(celda => celda.padEnd(8, " ")) // ancho fijo para cada celda
+              .join("")
+        )
+        .join("\n");
+
+    const dataTexto = 
+      "=== MAPA JUGADOR ===\n" +
+      matrizFormateada(matrizJugador) +
+      "\n\n=== MAPA ENEMIGO ===\n" +
+      matrizFormateada(matrizEnemigo);
+
+    const blob = new Blob([dataTexto], {
+      type: "text/plain"
+    });
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "mapas.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+}
+
+
+
+
+
+
