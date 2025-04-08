@@ -1,7 +1,6 @@
 export class Tablero {
-  constructor(tamañoTablero, colorBarcos, geoPosicion) {
+  constructor(tamañoTablero, geoPosicion) {
     this.tamañoTablero = tamañoTablero;
-    this.colorBarcos = colorBarcos;
     this.geoPosicion = geoPosicion;
   }
 }

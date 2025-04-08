@@ -1,67 +1,46 @@
-<div class="container">
-  <!-- Opciones -->
-  <div class="options">
-    <div class="card custom-card">
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label class="text-center w-100">Tablero de juego</label>
-            <input
-              type="number"
-              id="inTamaño"
-              class="form-control text-center w-100"
-              placeholder="Ingrese un tamaño"
-            />
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="card custom-card">
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label class="text-center w-100">Color de barcos</label>
-            <input
-              type="color"
-              id="colorBarcos"
-              class="form-control mb-2 color"
-              value="#000000"
-            />
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="card custom-card">
-      <div class="card-body">
-        <form>
-          <div class="form-group">
-            <label class="text-center w-100">Geoposicion</label>
-            <input
-              type="text"
-              id="geoPosicion"
-              class="form-control text-center w-100"
-              placeholder="Seleccione una geoposicion"
-            />
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tablero -->
-  <div class="card tablero">
-    <div class="card-body">
-      <form>
-        <div class="form-group">
-          <label>Posicion de los barcos</label>
+<div class="containerOptions bodyOpciones">
+  <h1>Naval Battle</h1>
+  <div class="options-container">
+    <div class="options">
+      <div class="card custom-card tamañoColor mb-2">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label class="text-center w-100">Tamaño del tablero</label>
+              <input
+                type="number"
+                id="inTamaño"
+                class="form-control text-center w-100"
+                placeholder="Ingrese un tamaño"
+                value="10"
+              />
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
+
+      <div class="card custom-card geoposicion mb-2">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label class="text-center w-100 mb-2">Geoposicion</label>
+              <input
+                type="text"
+                id="geoPosicion"
+                class="form-control text-center w-100 mb-2"
+                placeholder="Seleccione una geoposicion"
+                value="Fairbanks"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 
+  <div class="button-container text-center">
+    <button id="btnConfirmar" type="submit" class="btn btn-primary btn-block">
+      Confirmar
+    </button>
+  </div>
 </div>
-
-<button id="btnConfirmar" type="submit" class="btn btn-primary btn-block mt-2">Confirmar</button>
-

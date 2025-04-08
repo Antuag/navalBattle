@@ -1,0 +1,81 @@
+/* Contenedor principal */
+.d-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* 🟢 Cambiado para que sea responsive */
+  width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  
+}
+
+/* Tableros */
+#tableroGuerra1,
+#tableroGuerra2,
+#tableroGuerra3 {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 10), minmax(20px, 1fr));
+  grid-template-rows: repeat(var(--rows, 10), minmax(20px, 1fr));
+  width: calc(var(--cols, 10) * 30px);
+  height: calc(var(--rows, 10) * 30px);
+  gap: 2px;
+  background-color: #193aca;
+  border: 3px solid #000;
+  border-radius: 10px;
+  pointer-events: auto;
+  box-sizing: border-box;
+  
+}
+
+/* Celdas */
+.buttonGuerra {
+  background-color: #000080;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  transition: background 0.3s ease;
+}
+
+/* Hover */
+.buttonGuerra:hover {
+  background-color: #4682b4;
+}
+
+body.batalla {
+  background-image: url("src/assets/img/fondoAtaque.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+
+/* 📱 Ajustes para tablets */
+@media (max-width: 992px) {
+  .d-grid {
+    justify-content: center;
+  }
+
+  #tableroGuerra1,
+  #tableroGuerra2,
+  #tableroGuerra3 {
+    width: calc(var(--cols, 10) * 25px);
+    height: calc(var(--rows, 10) * 25px);
+  }
+}
+
+/* 📱 Ajustes para móviles */
+@media (max-width: 576px) {
+  #tableroGuerra1,
+  #tableroGuerra2,
+  #tableroGuerra3 {
+    width: calc(var(--cols, 10) * 22px);
+    height: calc(var(--rows, 10) * 22px);
+  }
+}
+
