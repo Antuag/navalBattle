@@ -1,3 +1,11 @@
+/* 🔵 Estilo general */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Contenedor principal */
 .info-container {
   position: absolute;
   top: 10px;
@@ -6,8 +14,13 @@
   flex-direction: column;
   gap: 8px;
   z-index: 15;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
+/* Caja de información */
 .info-box {
   background: rgba(161, 194, 238, 0.8);
   border-radius: 10px;
@@ -16,8 +29,13 @@
   width: 250px;
   font-size: 14px;
   border-left: 4px solid #042263;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
+/* Párrafos dentro de info-box */
 .info-box p {
   margin: 5px 0;
 }
@@ -30,6 +48,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px auto;
+    padding: 0 10px;
   }
 
   .info-box {
@@ -44,6 +63,7 @@
     position: static;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px;
   }
 
   .info-box {
