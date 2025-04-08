@@ -10,6 +10,7 @@
   overflow-x: auto;
   box-sizing: border-box;
   padding: 10px;
+  
 }
 
 /* Tableros */
@@ -27,6 +28,7 @@
   border-radius: 10px;
   pointer-events: auto;
   box-sizing: border-box;
+  
 }
 
 /* Celdas */
@@ -43,6 +45,14 @@
 .buttonGuerra:hover {
   background-color: #4682b4;
 }
+
+body.batalla {
+  background-image: url("../assets/img/fondoAtaque.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 
 
 /* 📱 Ajustes para tablets */

@@ -1,29 +1,4 @@
-body {
-  background-color: #1e3d59;
-  font-family: Arial, sans-serif;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  margin: 0;
-  overflow: auto;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  max-width: 700px;
-  width: 100%;
-  padding: 25px;
-  background-color: #0d1b2a;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
+.container,
 .containerOptions {
   display: flex;
   flex-direction: column;
@@ -32,9 +7,14 @@ body {
   max-width: 700px;
   width: 100%;
   padding: 25px;
-  background-color: #0d1b2a;
+  background: rgba(255, 255, 255, 0.05);
+  /* Efecto vidrio */
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  /* Difumina el fondo detrás */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .options-container {
@@ -46,89 +26,106 @@ body {
 }
 
 .custom-card {
-  background-color: #112d4e;
+  background: rgba(255, 255, 255, 0.05);
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 15px rgba(0, 209, 255, 0.2);
   text-align: center;
   width: 100%;
-  min-width: 280px;
+  min-width: 580px;
   transition: transform 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .custom-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 209, 255, 0.4);
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid #f8f9fa; /* Agregado borde */
-  border-radius: 5px; /* Borde más suave */
   padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 label {
   font-weight: bold;
-  color: #f8f9fa;
+  color: #00eaff;
+  text-shadow: 1px 1px 2px #000;
 }
 
-.form-control {
-  background-color: #0d1b2a;
-  border: 1px solid #f8f9fa;
-  color: white;
+.form-control,
+.form-select {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00eaff;
+  color: #ffffff;
   text-align: center;
   width: 100%;
   height: 45px;
   border-radius: 5px;
-}
-
-.form-select {
-  background-color: #0d1b2a;
-  border: 1px solid #f8f9fa;
-  color: white;
-  text-align: center;
-  width: 230px;
-  height: 45px;
-  border-radius: 5px;
+  font-weight: bold;
 }
 
 input[type="color"] {
   width: 100%;
   height: 40px;
   border: none;
-  background: rgba(0, 0, 0, 0.3);
   border-radius: 5px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .button-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: auto; /* Hace que el botón se mantenga abajo */
-  padding-top: 20px; /* Espacio extra antes del botón */
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 #btnConfirmar {
-  background-color: #ff6b6b;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
+  color: #ffffff;
   border: none;
-  padding: 8px 18px; /* Botón más pequeño */
-  border-radius: 5px;
-  font-size: 14px; /* Tamaño de fuente reducido */
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
-  width: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 209, 255, 0.5);
 }
 
 #btnConfirmar:hover {
-  background-color: #d9534f;
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 209, 255, 0.7);
 }
 
- 
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00eaff;
+  text-shadow: 2px 2px 15px rgba(0, 209, 255, 0.7);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+
+body.opciones {
+  background-image: url("../assets/img/fondoOpciones.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 @media (max-width: 768px) {
   .container {
@@ -143,5 +140,9 @@ input[type="color"] {
   #btnConfirmar {
     width: 100%;
     font-size: 16px;
+  }
+
+  .custom-card {
+    min-width: 100%;
   }
 }

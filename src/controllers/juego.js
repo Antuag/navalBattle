@@ -51,13 +51,14 @@ export async function crearJuego() {
       idCasilla,
       matrizMaquina
     );
-    console.log(leDioJugador);
+
 
     cargarUsuario();
     localStorage.setItem("esTurnoJugador", leDioJugador); // Cambia el turno si no acertó
 
-    // Turno de la máquina mientras siga fallando
+    // Turno de la máquina mientras siga acertando
     while (localStorage.getItem("esTurnoJugador") == "false") {
+
       let leDioMaquina = await turnoMaquina(matrizJugador);
       console.log(leDioMaquina);
 
@@ -129,7 +130,7 @@ async function ataque(
       boton.style.backgroundColor = "red";
       huboImpacto = true;
       console.log("Mapa con barcos hundidos", matrizContrincante);
-      
+
 
       if (barco.getPoscicionesBarco().length == 0) {
         alert("Barco hundido");

@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("../styles/img/fondoNaval1.png");
+  background-image: url("../assets/img/fondoInicio.png");
   background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
   background-position: center;
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -31,9 +31,15 @@
 
 /* Título */
 h2 {
-  margin-bottom: 30px;
-  color: #f0f0fa;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00d1ff;
+  text-shadow: 2px 2px 10px rgba(0, 209, 255, 0.5);
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
 }
 
 /* Grupo de inputs */
@@ -63,7 +69,7 @@ select:focus {
 
 /* Botón de confirmacion */
 #btnIniciar {
-  background-color: #ff6b6b;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
   color: #fff;
   margin: 10px auto; /* Centra automáticamente */
   padding: 10px 15px;
@@ -71,14 +77,15 @@ select:focus {
   font-weight: bold;
   border: none;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: pointer;  
   width: 80%;
   display: block; /* Necesario para que el margin auto funcione */
   transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 209, 255, 0.5);
 }
 
 #btnRanking {
-  background-color: #2d4e04;
+  background: linear-gradient(135deg, #00eaff, #0077ff);
   color: #fff;
   margin: 10px auto; /* Centra automáticamente */
   padding: 10px 15px;
@@ -90,6 +97,7 @@ select:focus {
   width: 80%;
   display: block; /* Necesario para que el margin auto funcione */
   transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 209, 255, 0.5);
 }
 
 

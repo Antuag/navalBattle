@@ -48,6 +48,7 @@ export function crearUsuario() {
     console.log(jugador);
 
     await Utils.loadPage("src/views/opcionesJuego.html", container, true);
+    document.body.classList.add('opciones');
     crearTablero();
   });
 }
@@ -74,6 +75,7 @@ export function cargarRanking() {
   let btnRanking = document.getElementById("btnRanking");
   btnRanking.addEventListener("click", async () => {
     await Utils.loadPage("src/views/ranking.html", container, true);
+    document.body.classList.add('ranking');
     cargarPuntajes();
   });
 }

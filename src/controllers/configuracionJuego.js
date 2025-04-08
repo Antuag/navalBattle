@@ -23,6 +23,7 @@ export async function crearTablero() {
         localStorage.setItem("tablero", JSON.stringify(tablero));
         console.log(tablero);
         await Utils.loadPage("src/views/crearBarcos.html", container, true);
+        document.body.classList.add('barcos');
         configuracionPosBarcos();
         seleccionBarcos();
 

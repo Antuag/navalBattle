@@ -98,8 +98,9 @@ export function configuracionPosBarcos() {
     //se  resetea para que cuando se ingrese el barco vuelva todo por defecto
 
     selectBarco.selectedIndex = 0;
-    document.getElementById("imgBarco").src = "src/styles/img/cheems.png";
-
+    document.getElementById("imgBarco").src = "src/assets/img/cheems.png";
+    console.log(selectBarco.length);
+    
     if (selectBarco.length == 1) {
       localStorage.setItem(
         "tableroJugador",
@@ -116,6 +117,7 @@ export function configuracionPosBarcos() {
         document.getElementById("container"),
         false
       );
+      document.body.classList.add('batalla');
       cargarClima();
       crearJuego();
     }
@@ -141,7 +143,7 @@ export function seleccionBarcos() {
     let tamañoBarco =
       this.options[this.selectedIndex].getAttribute("data-size");
 
-    imgBarco.src = `src/styles/img/${barcoSeleccionado}.jpeg`;
+    imgBarco.src = `src/assets/img/${barcoSeleccionado}.jpeg`;
     localStorage.setItem("tamañoBarco", tamañoBarco);
 
     if (!document.getElementById("btnGirarBarco")) {

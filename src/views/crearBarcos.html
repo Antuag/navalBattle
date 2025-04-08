@@ -1,22 +1,20 @@
-<div class="card custom-card" id="cardBarcos">
-  <div class="card-body">
+<div id="cardBarcos">
+  <div class="cardBarcos-body">
     <form>
-      <div class="form-group">
-        <label class="text-center w-100">Color de los barcos</label>
+      <div class="grupoBarcos">
+        <label class="labelBarcos text-center w-100">Color de los barcos</label>
 
         <input
           type="color"
           id="colorBarcos"
-          class="form-control mb-2 color"
+          class="inputColorBarcos mb-2"
           value="#000000"
         />
 
-        <label>Selecciona un barco:</label>
-        <select id="selectBarco" class="form-select mb-2 text-center">
+        <label class="labelBarcos">Selecciona un barco:</label>
+        <select id="selectBarco" class="selectBarcos mb-2 text-center">
           <option class="hidden-option" disabled selected>Barcos</option>
-          <option value="submarino" data-size="2"cantidad="2">Submarino</option>
-          <option value="destructor" data-size="3" cantidad="2">Destructor</option>
-          <option value="acorazado" data-size="4" cantidad="1">Acorazado</option>
+        
           <option value="portaaviones" data-size="5" cantidad="1">Portaaviones</option>
         </select>
 
@@ -27,6 +25,7 @@
     </form>
   </div>
 </div>
+
 
 <div class="d-grid">
   <div id="tableroGuerra3"></div>
