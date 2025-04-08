@@ -78,6 +78,7 @@ async function turnoMaquina(matrizJugador) {
   );
 
   console.log("Mapa con barcos hundidos jugador", matrizJugador);
+  //se guarda la matriz del jugador para exportar
   localStorage.setItem("MatrizJugadorFinal", JSON.stringify(matrizJugador));
 
 
@@ -139,6 +140,7 @@ async function ataque(
       boton.style.backgroundColor = "red";
       huboImpacto = true;
       console.log("Mapa con barcos hundidos", matrizContrincante);
+      //Se guarda la matriz del enemigo para exportar en otra funcion
       localStorage.setItem("MatrizEnemigoFinal", JSON.stringify(matrizContrincante));
 
 
@@ -243,6 +245,7 @@ function eliminarPosicion(barco, objetivo) {
   return barco;
 }
 
+//Funcion para exportar mapas
 function exportarMapas() {
   let btnExportar = document.getElementById("btnExportar");
 
