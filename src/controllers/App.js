@@ -8,6 +8,7 @@ class App {
     login();
     crearUsuario();
     cargarRanking();
+    
   }
 }
 

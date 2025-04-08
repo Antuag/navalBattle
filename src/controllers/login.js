@@ -77,5 +77,19 @@ export function cargarRanking() {
     await Utils.loadPage("src/views/ranking.html", container, true);
     document.body.classList.add('ranking');
     cargarPuntajes();
+    volverInicio();
   });
+
+}
+
+export function volverInicio() {
+  let btnVolver = document.getElementById("btnVolver");
+  btnVolver.addEventListener("click", async () => {
+    const container = document.getElementById("container");
+    await Utils.loadPage("src/views/login.html", container, true);
+    login();
+    crearUsuario();
+    cargarRanking();
+
+  })
 }

@@ -5,7 +5,7 @@ import Utils from "./Utils.js";
 
 
 export function crearBarcosMaquina() {
-    const  tamañosBarcos = [2, 2 , 3, 3, 4, 5];
+    const  tamañosBarcos = [2];
     const matrizMaquina= matrizTablero()
     
     tamañosBarcos.forEach(tamaño=> {

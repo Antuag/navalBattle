@@ -47,7 +47,7 @@
 }
 
 body.batalla {
-  background-image: url("../assets/img/fondoAtaque.png");
+  background-image: url("src/assets/img/fondoAtaque.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -84,7 +84,7 @@ select:focus {
   box-shadow: 0 4px 10px rgba(0, 209, 255, 0.5);
 }
 
-#btnRanking {
+#btnRanking, #btnVolver {
   background: linear-gradient(135deg, #00eaff, #0077ff);
   color: #fff;
   margin: 10px auto; /* Centra automáticamente */

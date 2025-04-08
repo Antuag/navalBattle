@@ -3,8 +3,9 @@ import { crearMapa } from "./creacionTablero.js";
 import { crearBarcosMaquina } from "./confBarcosMaquina.js";
 import { ContenedorBarcos } from "../models/ContenedorBarcos.js";
 import { crearMatrizJugador } from "./confBarcosJugador.js";
-import { cargarUsuario } from "./login.js";
+import { cargarUsuario, volverInicio } from "./login.js";
 import { cargarPuntajes } from "./ranking.js";
+
 
 // Función principal para iniciar el juego
 export async function crearJuego() {
@@ -159,7 +160,9 @@ async function ataque(
       body: JSON.stringify(usuario),
     });
     await Utils.loadPage("src/views/ranking.html", container, true);
+    document.body.classList.add('ranking');
     cargarPuntajes();
+    volverInicio();
   }
 
   // Si no impactó ningún barco

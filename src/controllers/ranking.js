@@ -48,3 +48,4 @@ export function cargarPuntajes() {
       console.error("Error al obtener los datos del jugador", error)
     );
 }
+
