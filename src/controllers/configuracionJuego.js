@@ -12,10 +12,16 @@ export async function crearTablero() {
     btnConfirmar.addEventListener("click", async () => {
       const tamaño = document.getElementById("inTamaño").value; // Obtiene el valor del input para el tamaño del tablero
       const geoPosicion = document.getElementById("geoPosicion").value; // Obtiene la ubicación ingresada por el usuario
+      const pista = document.getElementById("pista").value; // Obtiene la pista ingresada por el usuario
 
       // Verifica que la geolocalización no esté vacía
       if (geoPosicion == "") {
         alert("La geoPosicion no puede estar vacia"); // Muestra alerta si está vacía
+        return;
+      }
+
+      if (pista < 1 || pista > 3) {
+        alert("La pista debe ser un número entre 1 y 3"); // Muestra alerta si la pista no está en el rango
         return;
       }
 
@@ -24,7 +30,7 @@ export async function crearTablero() {
         alert("El tamaño del tablero debe ser minimo de 10x10 y maximo de 20x20"); // Muestra mensaje de error
       } else {
         // Si los datos son válidos, crea una nueva instancia del tablero
-        const tablero = new Tablero(tamaño, geoPosicion);
+        const tablero = new Tablero(tamaño, geoPosicion,pista);
 
         // Guarda el tablero en localStorage como string JSON
         localStorage.setItem("tablero", JSON.stringify(tablero));

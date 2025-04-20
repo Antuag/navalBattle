@@ -118,6 +118,9 @@ async function ataque(
   const boton = document.getElementById(idCasilla);
   let huboImpacto = false;
   let usuario = JSON.parse(localStorage.getItem("jugador"));
+  let tablero = JSON.parse(localStorage.getItem("tablero"));
+  
+  
 
   // Suma puntaje por el ataque
   usuario["score"] += calcularPuntaje(matrizContrincante, x, y);
@@ -131,6 +134,10 @@ async function ataque(
   contenedorJugadorContrincante.forEach((barco) => {
     if (existeBarco(barco.getPoscicionesBarco(), [x, y])) {
       eliminarPosicion(barco, [x, y]);
+      const pista =tablero["pista"];
+      // Si el barco fue impactado, se cambia el color de una casilla para mostrar una pista 
+      mostrarPista(matrizContrincante, pista);
+      
       if (jugador == "p2") {
         boton.onclick = () => {
           alert("Esta posición ya ha sido atacada");
@@ -282,6 +289,64 @@ function exportarMapas() {
     URL.revokeObjectURL(url);
   });
 }
+
+function mostrarPista(matriz, pista) {
+  if (pista < 1 || pista > 3) {
+    console.warn("La variable 'pista' debe estar entre 1 y 3.");
+    return;
+  }
+
+  const direcciones = [
+    [0, 1],   // derecha
+    [0, -1],  // izquierda
+    [-1, 0],  // arriba
+    [1, 0],   // abajo
+  ];
+
+  // 1. Buscar todas las posiciones de barcos enemigos intactos
+  const posibles = [];
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[0].length; j++) {
+      if (matriz[i][j].includes("p2") && !matriz[i][j].includes("h")) {
+        posibles.push([i, j]);
+      }
+    }
+  }
+
+  if (posibles.length === 0) {
+    console.warn("No hay barcos enemigos intactos para dar pista.");
+    return;
+  }
+
+  // 2. Elegir una posición de barco aleatoria
+  const [bx, by] = posibles[Math.floor(Math.random() * posibles.length)];
+
+  // 3. Mezclar direcciones para intentar de forma aleatoria
+  const direccionesAleatorias = direcciones.sort(() => Math.random() - 0.5);
+
+  for (let [dx, dy] of direccionesAleatorias) {
+    const nx = bx + dx * pista;
+    const ny = by + dy * pista;
+
+    // 4. Validar que la casilla esté dentro del mapa
+    if (
+      nx >= 0 && nx < matriz.length &&
+      ny >= 0 && ny < matriz[0].length
+    ) {
+      // 5. Validar que no sea parte de un barco (ni impactado ni sin impactar)
+      if (!matriz[nx][ny].includes("p2") && matriz[nx][ny] === "a") {
+        const casilla = document.getElementById(`p2-${nx}-${ny}`);
+        if (casilla) {
+          casilla.style.backgroundColor = "yellow";
+          return; // ✅ Se pintó una pista válida
+        }
+      }
+    }
+  }
+
+  console.warn("No se encontró ninguna casilla válida para mostrar pista.");
+}
+
 
 
 

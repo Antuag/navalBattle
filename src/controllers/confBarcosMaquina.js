@@ -5,7 +5,8 @@ import Utils from "./Utils.js"; // Herramientas utilitarias como números aleato
 
 // Función principal para crear barcos de la máquina
 export function crearBarcosMaquina() {
-    const tamañosBarcos = [2, 2, 3, 3, 4, 5]; // Lista de tamaños de barcos a colocar
+    // const tamañosBarcos = [2, 2, 3, 3, 4, 5]; // Lista de tamaños de barcos a colocar
+    const tamañosBarcos = [2, 2, 3]; // Lista de tamaños de barcos a colocar
     const matrizMaquina = matrizTablero(); // Crea una nueva matriz del tablero para la máquina
     
     // Recorre cada tamaño de barco para colocarlo en el tablero
